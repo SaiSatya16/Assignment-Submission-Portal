@@ -58,12 +58,11 @@ pip install -r requirements.txt
 
 4. Set up environment variables:
 - In `config.py` file make the changes with the following contents:
-- MONGO_URI = 
 ```bash 
-mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
+MONGO_URI = mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
+JWT_SECRET_KEY=`your-secret-key`
+FLASK_DEBUG=False
 ```
-- JWT_SECRET_KEY=`your-secret-key`
-- FLASK_DEBUG=False
 - Replace `<username>`, `<password>`, and `<cluster-name>` with your actual MongoDB Atlas credentials.
 
 5. Ensure your IP address is whitelisted in MongoDB Atlas.
