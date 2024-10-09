@@ -57,7 +57,7 @@ class AdminLogin(Resource):
         return {'message': 'Invalid credentials'}, 401
 
 class AssignmentList(Resource):
-    # @jwt_required()
+    @jwt_required()
     def get(self):
         admin_id = get_jwt_identity()
         try:

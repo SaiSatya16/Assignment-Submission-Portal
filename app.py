@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Api
 
 import os
@@ -9,7 +9,6 @@ from config import DevelopmentConfig
 from flask_swagger_ui import get_swaggerui_blueprint
 from flask_cors import CORS
 
-# Load environment variables
 
 
 # Configure logging
@@ -51,6 +50,7 @@ def create_app():
     return app
 
 app = create_app()
+app.app_context().push()
 CORS(app)
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 API_URL = '/static/openapi.json' 
@@ -64,14 +64,10 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 
 app.register_blueprint(swaggerui_blueprint)
 
-@app.route("/")
-def home():
-    try:
-        # Try to fetch the server info to check the connection
-        server_info = mongo.db.client.server_info()
-        return f"Connected successfully to MongoDB Atlas! Server version: {server_info.get('version', 'unknown')}"
-    except Exception as e:
-        return f"Failed to connect to MongoDB Atlas. Error: {str(e)}"
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 
