@@ -22,18 +22,26 @@ This is a Flask-RESTful application that provides an API for an assignment submi
 
 1. Clone this repository:
 
-`git clone <https://github.com/SaiSatya16/Assignment-Submission-Portal>`
-`cd assignment-submission-portal`
+```bash 
+git clone https://github.com/SaiSatya16/Assignment-Submission-Portal
+cd assignment-submission-portal 
+```
 
 2. Create a virtual environment and activate it:
-`python -m venv venv`
-`source venv/bin/activate`  # On Windows, use `venv\Scripts\activate`
+```bash 
+python -m venv venv
+source venv/bin/activate
+```
+- On Windows, use `venv\Scripts\activate`
 
 3. Install the required packages:
+```bash 
 pip install -r requirements.txt
+```
+
 
 4. Set up environment variables:
-Create a `.env` file in the root directory with the following contents:
+- Create a `.env` file in the root directory with the following contents:
 - MONGO_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
 - JWT_SECRET_KEY=your-secret-key
 - FLASK_DEBUG=False
@@ -45,6 +53,7 @@ Create a `.env` file in the root directory with the following contents:
 `python app.py`
 
 ## Project Structure
+```bash
 assignment_portal/
 ├── app.py
 ├── .env
@@ -52,14 +61,15 @@ assignment_portal/
 ├── requirements.txt
 ├── tests.py
 ├── resources/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── user.py
 │   └── admin.py
 └── models/
-├── init.py
-├── user.py
-├── admin.py
-└── assignment.py
+    ├── __init__.py
+    ├── user.py
+    ├── admin.py
+    └── assignment.py
+```
 
 ## API Endpoints
 
