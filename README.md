@@ -21,27 +21,28 @@ This is a Flask-RESTful application that provides an API for an assignment submi
 ## Setup
 
 1. Clone this repository:
-git clone <repository-url>
-cd assignment-submission-portal
+
+`git clone <https://github.com/SaiSatya16/Assignment-Submission-Portal>`
+`cd assignment-submission-portal`
 
 2. Create a virtual environment and activate it:
-python -m venv venv
-source venv/bin/activate  # On Windows, use venv\Scripts\activate
+`python -m venv venv`
+`source venv/bin/activate`  # On Windows, use `venv\Scripts\activate`
 
 3. Install the required packages:
 pip install -r requirements.txt
 
 4. Set up environment variables:
 Create a `.env` file in the root directory with the following contents:
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
-JWT_SECRET_KEY=your-secret-key
-FLASK_DEBUG=False
-Replace `<username>`, `<password>`, and `<cluster-name>` with your actual MongoDB Atlas credentials.
+- MONGO_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
+- JWT_SECRET_KEY=your-secret-key
+- FLASK_DEBUG=False
+- Replace `<username>`, `<password>`, and `<cluster-name>` with your actual MongoDB Atlas credentials.
 
 5. Ensure your IP address is whitelisted in MongoDB Atlas.
 
 6. Run the application:
-python app.py
+`python app.py`
 
 ## Project Structure
 assignment_portal/
@@ -101,7 +102,7 @@ To run the unit tests:
 1. Ensure you're in the project root directory and your virtual environment is activated.
 
 2. Run the following command:
-python -m unittest tests.py
+`python -m unittest tests.py`
 
 This will run all the unit tests and display the results in the console.
 
@@ -136,11 +137,4 @@ If you're having trouble connecting to MongoDB Atlas:
 - Add password reset functionality.
 - Implement rate limiting to prevent abuse of the API.
 - Add more detailed user profiles and assignment metadata.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
+- Implement file storage for assignment uploads (e.g., AWS S3).
