@@ -57,21 +57,43 @@ mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
 
 ## Project Structure
 ```bash
-assignment_portal/
-├── app.py
-├── .env
-├── README.md
-├── requirements.txt
-├── tests.py
-├── resources/
-│   ├── __init__.py
-│   ├── user.py
-│   └── admin.py
-└── models/
-    ├── __init__.py
-    ├── user.py
-    ├── admin.py
-    └── assignment.py
+    ASSIGNMENT_PORTAL/
+    ├── models/
+    │   ├── __pycache__/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── assignment.py
+    │   └── user.py
+    ├── resources/
+    │   ├── __pycache__/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   └── user.py
+    ├── static/
+    │   └── vue/
+    │       ├── components/
+    │       │   ├── about.js
+    │       │   ├── adminhome.js
+    │       │   ├── AdminLogin.js
+    │       │   ├── AdminRegister.js
+    │       │   ├── home.js
+    │       │   ├── navbar.js
+    │       │   ├── userhome.js
+    │       │   ├── userlogin.js
+    │       │   └── UserRegister.js
+    │       ├── index.js
+    │       └── router.js
+    ├── templates/
+    │   └── index.html
+    ├── .gitignore
+    ├── app.log
+    ├── app.py
+    ├── config.py
+    ├── extensions.py
+    ├── README.md
+    ├── requirements.txt
+    ├── schemas.py
+    └── tests.py
 ```
 
 ## API Endpoints
