@@ -2,18 +2,29 @@ import router from "./router.js"
 import Navbar from "./components/navbar.js"
 
 
+router.beforeEach((to, from, next) => {
+    if (to.name !== 'about' && to.name !== 'UserLogin' &&to.name !== 'UserRegister' && to.name !== 'AdminRegister' && to.name !== 'home' && to.name !== 'AdminLogin' &&  !localStorage.getItem('token') ? true : false)
+      next({ name: 'home' })
+    else next()
+  })
 
 
-new Vue ({
-    el: '#app',
+  new Vue({
+    el: "#app",
     template: `<div>
-    <Navbar />
-    <router-view class="m-3"/></div>`,
+    <Navbar :key='has_changed'/>
+    <router-view/></div>`,
     router,
     components: {
-        Navbar,
-      },
+      Navbar,
+    },
     data: {
-        message: 'Hello Vue!'
-    }
-})
+      message: "Hello Vue!",
+      has_changed: true,
+    },
+    watch: {
+      $route(to, from) {
+        this.has_changed = !this.has_changed
+      },
+    },
+  });

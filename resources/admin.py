@@ -3,6 +3,7 @@ from flask import request
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from models.admin import AdminModel
 from models.assignment import AssignmentModel
+from models.user import UserModel
 from schemas import AdminSchema, AssignmentSchema
 from marshmallow import ValidationError
 import logging
@@ -63,7 +64,14 @@ class AssignmentList(Resource):
         try:
             assignments = AssignmentModel.find_by_admin(admin_id)
             logger.info(f"Assignments retrieved for admin: {admin_id}")
-            assignment_list = [assignment.json() for assignment in assignments]
+            assignment_list = [assignment_schema.dump(assignment) for assignment in assignments]
+            user_names = {}
+            for assignment in assignment_list:
+                user_id = assignment['user_id']
+                if user_id not in user_names:
+                    user = UserModel.find_by_id(user_id)
+                    user_names[user_id] = user.username
+                assignment['user_name'] = user_names[user_id]
             logger.debug(f"Assignment list: {assignment_list}")
             return {'assignments': assignment_list}, 200
         except Exception as e:

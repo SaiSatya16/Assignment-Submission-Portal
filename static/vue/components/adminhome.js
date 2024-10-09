@@ -21,6 +21,7 @@ const adminhome = {
           const data = await response.json();
           if (response.ok) {
             this.assignments = data.assignments;
+            console.log(data.assignments);
           } else {
             this.error = data.message;
           }
@@ -55,7 +56,8 @@ const adminhome = {
           <table class="table">
             <thead>
               <tr>
-                <th>User</th>
+                <th>User ID</th>
+                <th>Name</th>
                 <th>Task</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -64,6 +66,7 @@ const adminhome = {
             <tbody>
               <tr v-for="assignment in assignments" :key="assignment._id">
                 <td>{{ assignment.user_id }}</td>
+                <td>{{ assignment.user_name }}</td>
                 <td>{{ assignment.task }}</td>
                 <td>{{ assignment.status }}</td>
                 <td>

@@ -11,6 +11,22 @@ This is a Flask-RESTful application that provides an API for an assignment submi
 - Input validation using Marshmallow schemas
 - Comprehensive error handling and logging
 - Unit tests for all major functionalities
+- Vue.js frontend for user interaction
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/Screenshot2.png)
+
+### API Documentation
+![API Documentation](screenshots/Screenshot1.png)
+
+### User Dashboard
+![User Dashboard](screenshots/Screenshot3.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/Screenshot4.png)
+
 
 ## Prerequisites
 
@@ -24,7 +40,7 @@ This is a Flask-RESTful application that provides an API for an assignment submi
 
 ```bash 
 git clone https://github.com/SaiSatya16/Assignment-Submission-Portal
-cd assignment-submission-portal 
+cd Assignment-Submission-Portal
 ```
 
 2. Create a virtual environment and activate it:
@@ -53,7 +69,10 @@ mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
 5. Ensure your IP address is whitelisted in MongoDB Atlas.
 
 6. Run the application:
-`python app.py`
+
+```bash
+python app.py
+```
 
 ## Project Structure
 ```bash
@@ -137,7 +156,10 @@ To run the unit tests:
 1. Ensure you're in the project root directory and your virtual environment is activated.
 
 2. Run the following command:
-`python -m unittest tests.py`
+
+```bash
+python -m unittest tests.py
+```
 
 This will run all the unit tests and display the results in the console.
 
