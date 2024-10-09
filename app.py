@@ -6,6 +6,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from extensions import mongo, bcrypt, jwt
 from config import DevelopmentConfig
+from flask_swagger_ui import get_swaggerui_blueprint
+from flask_cors import CORS
 
 # Load environment variables
 
@@ -49,6 +51,18 @@ def create_app():
     return app
 
 app = create_app()
+CORS(app)
+SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
+API_URL = '/static/openapi.json' 
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,  # Swagger UI static files will be mapped to '{SWAGGER_URL}/dist/'
+    API_URL,
+    config={  # Swagger UI config overrides
+        'app_name': "Test application"
+    },
+)
+
+app.register_blueprint(swaggerui_blueprint)
 
 @app.route("/")
 def home():
