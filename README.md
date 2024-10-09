@@ -170,7 +170,7 @@ The application logs are stored in `app.log` in the root directory. The log file
 
 If you're having trouble connecting to MongoDB Atlas:
 
-1. Double-check your `.env` file. Make sure your `MONGO_URI` is correctly formatted and all placeholders are replaced with your actual MongoDB Atlas credentials.
+1. Double-check your `config.py` file. Make sure your `MONGO_URI` is correctly formatted and all placeholders are replaced with your actual MongoDB Atlas credentials.
 
 2. Ensure your IP address is whitelisted in MongoDB Atlas.
 
