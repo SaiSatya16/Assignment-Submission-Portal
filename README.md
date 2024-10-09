@@ -44,7 +44,7 @@ pip install -r requirements.txt
 - In `config.py` file make the changes with the following contents:
 - MONGO_URI = 
 ```bash 
-mongodb+srv://`<username>`:`<password>`@`<cluster-name>`.mongodb.net/assignment_portal
+mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
 ```
 - JWT_SECRET_KEY=`your-secret-key`
 - FLASK_DEBUG=False
