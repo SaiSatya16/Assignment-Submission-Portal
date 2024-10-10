@@ -66,9 +66,8 @@ pip install -r requirements.txt
 
 4. Set up environment variables:
 
-- currently, database is hosted on MongoDB Atlas, so you need to create an account on MongoDB Atlas and create a cluster
-- just skip the below step and go ahead with the next step to run on my database which is already hosted on MongoDB Atlas
-
+- currently, database is hosted on MongoDB Atlas, so you can skip this step and go ahead with the next step to run the application on my database which is already hosted on MongoDB Atlas
+- If you want to host the database on your own, then follow the below steps:
 
 - In `config.py` file make the changes with the following contents:
 ```bash 
