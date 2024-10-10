@@ -13,6 +13,14 @@ This is a Flask-RESTful application that provides an API for an assignment submi
 - Unit tests for all major functionalities
 - Vue.js frontend for user interaction
 
+### Application currently live at [Assignment Submission Portal](http://satya.ap-south-1.elasticbeanstalk.com)
+
+### API Documentation available at [API Documentation](http://satya.ap-south-1.elasticbeanstalk.com/api/docs/)
+
+- deployed on AWS Elastic Beanstalk and MongoDB Atlas cloud services.
+- The application is secured with JWT tokens and has separate routes for users and admins.
+- Employed aws codepipeline for CI/CD pipeline to deploy the application on AWS Elastic Beanstalk connected to the GitHub repository.
+
 ## Screenshots
 
 ### Home Page
@@ -57,6 +65,11 @@ pip install -r requirements.txt
 
 
 4. Set up environment variables:
+
+- currently, database is hosted on MongoDB Atlas, so you need to create an account on MongoDB Atlas and create a cluster
+- just skip the below step and go ahead with the next step to run on my database which is already hosted on MongoDB Atlas
+
+
 - In `config.py` file make the changes with the following contents:
 ```bash 
 MONGO_URI = mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/assignment_portal
